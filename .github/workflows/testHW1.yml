@@ -1,0 +1,90 @@
+# This starter workflow is for a CMake project running on a single platform. There is a different starter workflow if you need cross-platform coverage.
+# See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-multi-platform.yml
+name: CMake on a single platform
+
+on:
+  push:
+  pull_request:
+    paths:
+     - ".github/workflows/testHW1.yml"
+     - "homeWork/02/cstack/**"
+     - "homeWork/01/matrixMult/**"
+    
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
+    # You can convert this to a matrix build if you need cross-platform coverage.
+    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configure CMake
+      working-directory: ${{github.workspace}}/homeWork/01/
+      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
+      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+      run: cmake -B ./build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build
+      working-directory: ${{github.workspace}}/homeWork/01/
+      # Build your program with the given configuration
+      run: cmake --build ./build --target all --config ${{env.BUILD_TYPE}}
+
+    - name: Test_cmatrix
+      working-directory: ${{github.workspace}}/homeWork/01/
+      # Execute tests defined by the CMake configuration.
+      # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
+      run: |
+        cat tests/mtest/text0.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv0.txt
+        cat tests/mtest/text1.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv1.txt
+        cat tests/mtest/text2.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv2.txt
+        cat tests/mtest/text3.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv3.txt
+        cat tests/mtest/text4.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv4.txt
+        cat tests/mtest/text5.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv5.txt
+        cat tests/mtest/text6.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv6.txt
+        cat tests/mtest/text7.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv7.txt
+        cat tests/mtest/text8.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv8.txt
+        cat tests/mtest/text9.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv9.txt
+        cat tests/mtest/text10.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv10.txt
+        cat tests/mtest/text11.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv11.txt
+        cat tests/mtest/text12.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv12.txt
+        cat tests/mtest/text13.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv13.txt
+        cat tests/mtest/text14.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv14.txt
+        cat tests/mtest/text15.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv15.txt
+        cat tests/mtest/text16.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv16.txt
+        cat tests/mtest/text17.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv17.txt
+        cat tests/mtest/text18.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv18.txt
+        cat tests/mtest/text19.txt | ./build/cmatrix > tests/test_result.txt
+        cmp tests/test_result.txt tests/mtest/asnv19.txt
+      shell: bash
+      
+    - name: Test_cstack
+      working-directory: ${{github.workspace}}/homeWork/02/
+      ## Execute tests defined by the CMake configuration.
+      ## See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
+      run: ./build/Google_Tests_run_cstack
+      shell: bash
