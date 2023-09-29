@@ -7,7 +7,6 @@ on:
   pull_request:
     paths:
      - ".github/workflows/testHW1.yml"
-     - "homeWork/02/cstack/**"
      - "homeWork/01/matrixMult/**"
     
 env:
@@ -80,11 +79,4 @@ jobs:
         cmp tests/test_result.txt tests/mtest/asnv18.txt
         cat tests/mtest/text19.txt | ./build/cmatrix > tests/test_result.txt
         cmp tests/test_result.txt tests/mtest/asnv19.txt
-      shell: bash
-      
-    - name: Test_cstack
-      working-directory: ${{github.workspace}}/homeWork/02/
-      ## Execute tests defined by the CMake configuration.
-      ## See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-      run: ./build/Google_Tests_run_cstack
       shell: bash

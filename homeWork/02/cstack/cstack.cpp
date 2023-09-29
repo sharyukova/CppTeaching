@@ -1,8 +1,10 @@
 #include "cstack.hpp"
 
+
 CStack::CStack(){}
 
 CStack::~CStack(){
+    //destroy me!)
     clear();
 }
 
@@ -14,12 +16,12 @@ void CStack::clear(){
 
 }
 
-void CStack::push(int val){
+void CStack::push(uint32_t val){
 
 
 }
 
-int CStack::top(){
+uint32_t CStack::top(){
     return 0;
 }
 
