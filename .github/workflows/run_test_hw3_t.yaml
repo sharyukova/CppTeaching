@@ -1,0 +1,38 @@
+name: Test homeWork03
+
+on:
+  push:
+    paths:
+     - ".github/workflows/run_test_hw3_t.yaml"
+     - "homeWork/03/imNumbers/**"
+     - "!homeWork/03/tests/**"
+  pull_request:
+    paths:
+     - ".github/workflows/run_test_hw3_t.yaml"
+     - "homeWork/03/imNumbers/**"
+     - "!homeWork/03/tests/**"
+
+
+env:
+  BUILD_TYPE: Release
+  WORK_DIR: homeWork/03
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configure CMake
+      working-directory: ${{github.workspace}}/${{env.WORK_DIR}}/
+      run: cmake -B ./build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build
+      working-directory: ${{github.workspace}}/${{env.WORK_DIR}}/
+      run: cmake --build ./build --target Google_Tests_run_imNumbers --config ${{env.BUILD_TYPE}}
+
+    - name: Tests
+      working-directory: ${{github.workspace}}/${{env.WORK_DIR}}/
+      run: build/Google_Tests_run_imNumbers
+      shell: bash
