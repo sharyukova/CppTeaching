@@ -1,12 +1,16 @@
 # This starter workflow is for a CMake project running on a single platform. There is a different starter workflow if you need cross-platform coverage.
 # See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-multi-platform.yml
-name: CMake on a single platform
+name: Test homeWork01
 
 on:
   push:
+    paths:
+      - ".github/workflows/run_test_hw1_t.yaml"
+      - "homeWork/01/matrixMult/**"
+      - "!homeWork/01/tests/**"
   pull_request:
     paths:
-     - ".github/workflows/testHW1.yml"
+     - ".github/workflows/run_test_hw1_t.yaml"
      - "homeWork/01/matrixMult/**"
     
 env:
