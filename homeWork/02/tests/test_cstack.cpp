@@ -181,12 +181,12 @@ TEST(HelloTest, BasicAssertions7) {
     // Expect two strings not to be equal.
     using namespace std;
     vector<uint32_t> v;
-    vector<node> v1;
+    vector<Node> v1;
     size_t elems = 500;
     for(size_t i = 0; i < elems; i++){
         int r = rand() % 255;
         v.push_back(r);
-        node n;
+        Node n;
         n.info = r;
         v1.push_back(n);
     }
