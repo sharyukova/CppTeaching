@@ -124,7 +124,7 @@ TEST(HelloTest, BasicAssertions4) {
     for(size_t i = 0; i < 500; i++){
         int r = rand() % 255;
         v.push_back(r);
-        cs.push(r)
+        cs.push(r);
         for(size_t j = i; j > 0; j--){
             EXPECT_EQ(v[j], cs[j]);
         }
@@ -157,7 +157,7 @@ TEST(HelloTest, BasicAssertions5) {
 }
 
 
-TEST(HelloTest, BasicAssertions5) {
+TEST(HelloTest, BasicAssertions6) {
     // Expect two strings not to be equal.
     using namespace std;
     stack<uint32_t> s;
@@ -180,7 +180,7 @@ TEST(HelloTest, BasicAssertions5) {
 }
 
 
-TEST(HelloTest, BasicAssertions4) {
+TEST(HelloTest, BasicAssertions7) {
     // Expect two strings not to be equal.
     using namespace std;
     vector<uint32_t> v;
