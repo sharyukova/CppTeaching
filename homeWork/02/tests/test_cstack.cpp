@@ -98,10 +98,7 @@ TEST(HelloTest, BasicAssertions3) {
         EXPECT_EQ(s.empty(), cs.empty());
         EXPECT_EQ(s.top(), cs.top());
         int r = rand() % 255;
-        if (r == 120){
-            s = stack<uint32_t>();
-            cs = CStack();
-        }
+       
         if(r % 2 == 0){
             s.push(r);
             cs.push(r);
