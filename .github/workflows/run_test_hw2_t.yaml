@@ -5,12 +5,12 @@ on:
     paths:
      - ".github/workflows/run_test_hw2_t.yaml"
      - "homeWork/02/cstack/**"
-     - "!homeWork/02/tests/**"
+     - "homeWork/02/tests/**"
   pull_request:
     paths:
      - ".github/workflows/run_test_hw2_t.yaml"
      - "homeWork/02/cstack/**"
-     - "!homeWork/02/tests/**"
+     - "homeWork/02/tests/**"
 
 
 env:
