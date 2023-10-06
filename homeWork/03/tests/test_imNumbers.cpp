@@ -14,10 +14,11 @@ TEST(HelloTest, BasicAssertions)
 TEST(HelloTest, BasicAssertions0)
 {
     // Expect two strings not to be equal.
-    auto num = ImNumber();s
+    auto num = ImNumber();
     EXPECT_STRNE("hello", "world");
-    auto num = ImNumber(1, 2);
-    EXPECT_EQ(num, ImNumber(1, 2));
+    auto num1 = ImNumber(1, 2);
+    auto num2 = ImNumber(1, 2);
+    EXPECT_EQ(num1, num2);
 }
 
 TEST(HelloTest, BasicAssertions1)
