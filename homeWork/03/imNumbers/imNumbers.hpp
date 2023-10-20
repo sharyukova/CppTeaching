@@ -26,6 +26,6 @@ class ImNumber{
     double im;
     ImNumber();
     ImNumber(double real, double im);
-    bool operator=(const ImNumber& num)const;
+    bool operator==(const ImNumber& num)const;
     const double phi();
 };
