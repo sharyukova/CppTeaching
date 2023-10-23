@@ -5,7 +5,7 @@
 #include <string>
 #include <cstdint>
 #include <algorithm>
-
+#include <stack>
 
 // Demonstrate some basic assertions.
 TEST(HelloTest, BasicAssertions)
