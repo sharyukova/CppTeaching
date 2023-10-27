@@ -30,6 +30,7 @@ endif()
 add_executable(stl
   ${CMAKE_CURRENT_SOURCE_DIR}/stl/main.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/stl/stl.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/stl/stl.cpp
 )
 
 
@@ -56,12 +57,13 @@ enable_testing()
 add_executable(
   Google_Tests_run_stl
   ${CMAKE_CURRENT_SOURCE_DIR}/stl/stl.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/stl/stl.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/main.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_stl.cpp
 )
 
 target_include_directories(Google_Tests_run_stl PRIVATE  
-  ${CMAKE_CURRENT_SOURCE_DIR}/include(SelectLibraryConfigurations)
+  ${CMAKE_CURRENT_SOURCE_DIR}/stl
 )
 
 
