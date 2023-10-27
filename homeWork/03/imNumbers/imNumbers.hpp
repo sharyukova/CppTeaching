@@ -24,6 +24,7 @@ ImNumber(double real, double im);
 class ImNumber{
     double real;
     double im;
+public:
     ImNumber();
     ImNumber(double real, double im);
     bool operator==(const ImNumber& num)const;

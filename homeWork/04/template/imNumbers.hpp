@@ -26,12 +26,13 @@ ImNumber(T real, T im);
 class ImNumber{
     T real;
     T im;
+public:
     ImNumber(){};
     ImNumber(T real, T im);
     bool operator=(const ImNumber& num)const;
     const double phi();
 };
 
-bool ImNumber<T>::operator=(const ImNumber<T>& num)const{
+bool ImNumber<T>::operator==(const ImNumber<T>& num)const{
     return fabs(real - num.real) < EPS && fabs(im - num.im) < EPS;
 }
