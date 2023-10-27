@@ -2,4 +2,4 @@
 
 void taskRace();
 
-void registratura();
+void taskReg();
