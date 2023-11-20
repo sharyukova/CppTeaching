@@ -30,6 +30,6 @@
 > запустить тесты можно через Makefile: `make test`
     (может быть проблема с запуском, т.к. нужна утилита valgrind, для linux или wsl `sudo apt install valgrind`)
 
-
+### Дедлайн до 11.12.23 включительно
 
 За задачу спасибо https://github.com/s1Sharp !!!
