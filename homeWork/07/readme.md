@@ -12,8 +12,8 @@
     sex             - bool
     ip_address      - char[N4]
     married         - bool
-    favorite_color  - int32
-    Shirt_size      - char*[3]  (динамический)
+    favorite_color  - int32     (динамический)
+    Shirt_size      - char[3] 
     Age             - uchar     (динамический)
     
 
