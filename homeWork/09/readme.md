@@ -1,7 +1,5 @@
-Посчитать интеграл 
-    
-$$\int_0^x \frac{cos(t) - 1 }t\,dt
+Посчитать интеграл
 
 ```math
-SE = \frac{\sigma}{\sqrt{n}}
+\int_0^x \frac{cos(t) - 1 }t\,dt
 ```
