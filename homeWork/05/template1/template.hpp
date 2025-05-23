@@ -5,7 +5,6 @@ constexpr int fibonacci() {
     return fibonacci<N - 1>() + fibonacci<N - 2>();
 }
 
-// Явные специализации для N=0 и N=1 (альтернатива)
 template<>
 constexpr int fibonacci<0>() { return 0; }
 
