@@ -1,4 +1,4 @@
-#pragma once // Предотвращает множественное включение файла
+#pragma once 
 
 template<int N>
 constexpr int fibonacci() {
