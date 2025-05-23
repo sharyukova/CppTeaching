@@ -1,13 +1,31 @@
-#pragma once 
-#include <cmath>
-#define EPS 1e-10
+#pragma once // Предотвращает множественное включение файла
 
-
-auto fibonacci() -> T{
-
+template<int N>
+constexpr int fibonacci() {
+    return fibonacci<N - 1>() + fibonacci<N - 2>();
 }
 
+// Явные специализации для N=0 и N=1 (альтернатива)
+template<>
+constexpr int fibonacci<0>() { return 0; }
 
-class Fibonacci{
+template<>
+constexpr int fibonacci<1>() { return 1; }
 
+template<int N>
+class Fibonacci {
+public:
+    static constexpr int value = Fibonacci<N-1>::value + Fibonacci<N-2>::value;
+};
+
+template<>
+class Fibonacci<0> {
+public:
+    static constexpr int value = 0;
+};
+
+template<>
+class Fibonacci<1> {
+public:
+    static constexpr int value = 1;
 };
